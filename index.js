@@ -6,10 +6,10 @@ import postRoutes from "./routes/posts.js";
 
 const app = express();
 app
-  .use("/posts", postRoutes)
   .use(bodyParser.json({ limit: "30mb", extended: true }))
   .use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
-  .use(cors());
+  .use(cors())
+  .use("/posts", postRoutes)
 
 // AeUU1mbxneDguB89
 const CONNECTION_URL =
